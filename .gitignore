@@ -1,56 +1,42 @@
-\#*
-**/*.db
-**/*.log
-*~
-.#*
-.DS_Store
-.dotest
-.idea
-.loadpath
-.project
-.ruby-version
-bin/*
-shared/pids/puma.state
-public/dispatch.cgi
-public/dispatch.fcgi
-public/dispatch.rb
-httpd
-pgsql
-config/*-public.asc
-config/mongrel_cluster.yml
-db/*.sql
-db/schema.rb
-doc/**/*
-Gemfile.lock
-*/Gemfile.lock
-lib/products_index_profiler.rb
-log/*.log
-pkg
-public/assets
-public/attachments
-public/blank_iframe.html
-public/ckeditora
-sandbox/*
-spree_dev
-spree_test
-testapp
-**/spec/dummy
-tmp
-public/google_base.xml
-public/template_google_base.xml
-coverage/*
-var
-TAGS
-nbproject
-./vendor
-tags
-*.swp
+*.rbc
+capybara-*.html
+.rspec
+/log
+/tmp
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/coverage/
+/spec/tmp
+**.orig
 rerun.txt
-test_app
+pickle-email-*.html
+
+# TODO Comment out these rules if you are OK with secrets being uploaded to the repo
+config/initializers/secret_token.rb
+config/secrets.yml
+
+# dotenv
+# TODO Comment out this rule if environment variables can be committed
+.env
+
+## Environment normalization:
+/.bundle
+/vendor/bundle
+
+# these should all be checked in to normalize the environment:
+# Gemfile.lock, .ruby-version, .ruby-gemset
+
+# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
-**/coverage
-*/.sass-cache
-.localeapp
-.ruby-gemset
-database.yml
-.gem
+
+# if using bower-rails ignore default bower_components path bower.json files
+/vendor/assets/bower_components
+*.bowerrc
+bower.json
+
+# Ignore pow environment settings
+.powenv
+
+# Ignore Byebug command history file.
+.byebug_history
