@@ -1,0 +1,4 @@
+---
+pid: 70551
+control_url: unix:////private/tmp/backend/shared/sockets/pumactl.sock
+control_auth_token: :none
