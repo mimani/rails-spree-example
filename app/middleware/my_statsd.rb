@@ -16,8 +16,17 @@ module MyStatsd
     end
 
     def call(env)
-      (status, headers, body), response_time = call_with_timing(env)
+      request = ActionDispatch::Request.new(env)
+      request = Rack::Request.new("PATH_INFO" => env['REQUEST_PATH'], "REQUEST_METHOD" => env["REQUEST_METHOD"])
+      Rails.application.routes.router.recognize(request) { |route, params|
+        puts "I am here"
+         puts params.inspect
+         puts route.inspect
+       }
+       (status, headers, body), response_time = call_with_timing(env)
+
       puts "in middleware, path is: #{env['REQUEST_PATH']}"
+      puts "in middleware, REQUEST_METHOD is: #{ env["REQUEST_METHOD"]}"
       statsd.timing("#{env['REQUEST_PATH']}.response", response_time)
       statsd.increment("#{env['REQUEST_PATH']}.response_codes.#{status.to_s.gsub(/\d{2}$/,'xx')}")
       # Rack response
